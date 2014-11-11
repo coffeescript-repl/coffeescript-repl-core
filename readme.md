@@ -48,5 +48,5 @@ Simple CoffeeScript REPL Bookmarklet for Safari on iOS
 ### Install
 
 ```js
-javascript:(function(d,u,x,c,a){function a(a,b,c){c=d.createElement("script");c.src=a;c.onload=b;d.body.appendChild(c)}a(u,function(){a(c,function(){x=new CoffeeScriptREPL();while(c=prompt(x.log+"\n"+x.buffer,x.defaultInput))x.terminal(c)})})}(document,"https://cdnjs.cloudflare.com/ajax/libs/coffee-script/1.7.1/coffee-script.min.js",null,"https://dl.dropboxusercontent.com/u/265158/repl.js"))
+javascript:(function(d,u,x,c,a){function a(a,b,c){c=d.createElement("script");c.src=a;c.onload=b;d.body.appendChild(c)}a(u,function(){a(c,function(){x=new CoffeeScriptREPL();while(c=prompt(x.log+"\n"+x.buffer,x.defaultInput))x.terminal(c)})})}(document,"https://coffeescript-repl.github.io/coffee-script.js",null,"https://coffeescript-repl.github.io/coffee-repl.js"))
 ```
