@@ -1,27 +1,52 @@
-# coffee-repl
+# coffeescript-repl-core
 
-Simple CoffeeScript REPL Bookmarklet for Safari on iOS
-
-
-## Install
-
-    javascript:(function(d,u,x,c,a){if(a[c]){(new REPL).start();return;}x=d.createElement("script");x.src=u;x.id=c;d.body.appendChild(x);}(document,"https://raw.github.com/legokichi/coffee-repl/master/coffee-repl.js",null,"eye_repl",this));
+core script for CoffeeScript REPL.
 
 ## Usage
 
-    .exit / Exit the REPL
-    .help / Show repl options
-    .1 / last input
-    .n / nth input
-    .jquery / include("jQuery.js")
-    .underscore / include("underscore.js")
-    .prototype / include("prototype.js")
+simple repl using prompt.
 
-    word[space][OK] / autocomplete 
+```js
+<script src="coffeescript.js"></script>
+<script>
+$(function(){
+    var repl = new CoffeeScriptREPL();
+    var input;
+    while(input = prompt(repl.log+"\n"+repl.buffer, repl.defaultInput)){
+        repl.terminal(input);
+    }
+});
+</script>
+```
 
-## todo
-- LiveScript and prelude.js support
+```
+.help  show repl options
+.[n]   revert last nth input
+.hist  view input history
+.clear clear log
 
-## original
+c[space][enter]
+cons[space][enter]
+console.[space][enter]
+console.lo[space][enter]
+       autosuggestion
 
-https://github.com/yjerem/eye-repl
+log(str)   alt console.log()
+clear()    alt console.clear()
+dir(obj [, depth])
+           alt console.dir()
+type(obj)  alt typeof()
+load(url)  load js file
+$$[n]         last nth result variable
+```
+
+
+## for bookmarklet
+
+Simple CoffeeScript REPL Bookmarklet for Safari on iOS
+
+### Install
+
+```js
+javascript:(function(d,u,x,c,a){function a(a,b,c){c=d.createElement("script");c.src=a;c.onload=b;d.body.appendChild(c)}a(u,function(){a(c,function(){x=new CoffeeScriptREPL();while(c=prompt(x.log+"\n"+x.buffer,x.defaultInput))x.terminal(c)})})}(document,"https://cdnjs.cloudflare.com/ajax/libs/coffee-script/1.7.1/coffee-script.min.js",null,"https://dl.dropboxusercontent.com/u/265158/repl.js"))
+```
