@@ -9,13 +9,11 @@ simple repl using prompt.
 ```js
 <script src="coffeescript.js"></script>
 <script>
-$(function(){
-    var repl = new CoffeeScriptREPL();
-    var input;
-    while(input = prompt(repl.log+"\n"+repl.buffer, repl.defaultInput)){
-        repl.terminal(input);
-    }
-});
+  var repl = new CoffeeScriptREPL();
+  var input;
+  while(input = prompt(repl.log+"\n"+repl.buffer, repl.defaultInput)){
+      repl.terminal(input);
+  }
 </script>
 ```
 
